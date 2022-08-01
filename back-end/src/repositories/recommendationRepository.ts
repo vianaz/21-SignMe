@@ -19,7 +19,7 @@ function findAll(findAllWhere?: FindAllWhere) {
   return prisma.recommendation.findMany({
     where: filter,
     orderBy: { id: "desc" },
-    take: 10
+    take: 10,
   });
 }
 
@@ -31,7 +31,7 @@ function getAmountByScore(take: number) {
 }
 
 function getFindAllFilter(
-  findAllWhere?: FindAllWhere
+  findAllWhere?: FindAllWhere,
 ): Prisma.RecommendationWhereInput {
   if (!findAllWhere) return {};
 
